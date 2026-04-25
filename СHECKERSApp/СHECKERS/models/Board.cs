@@ -1,35 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using CHECKERS.Models;
 
-namespace CHECKERS.Models
+namespace СHECKERS.Models
 {
     public class Board : IEnumerable<Cell>
     {
-        private readonly Cell[,] _area = new Cell[8, 8];
+        public readonly Cell[,] area;
 
-        public Cell this[int row, int col] => _area[row, col];
+        public CellValueEnum this[int row, int column]
+        {
+            get => area[row, column].Cellvalueenum;
+            set => area[row, column].Cellvalueenum = value;
+        }
 
         public Board()
         {
-            for (int r = 0; r < 8; r++)
-                for (int c = 0; c < 8; c++)
-                    _area[r, c] = new Cell(r, c);
+            area = new Cell[8, 8];
+            for (int i = 0; i < area.GetLength(0); i++)
+            {
+                for (int j = 0; j < area.GetLength(1); j++)
+                {
+                    area[i, j] = new Cell(i, j, this);
+                }
+            }
         }
 
-        public bool InBounds(int row, int col) =>
-            row >= 0 && row < 8 && col >= 0 && col < 8;
-
-        public bool HasOpponentPieces(CellValueEnum currentPlayer)
+      public bool VictoryCondition(CellValueEnum currentPlayer)
         {
-            return this.Any(c =>
-                (currentPlayer == CellValueEnum.WhiteChecker && c.IsBlack) ||
-                (currentPlayer == CellValueEnum.BlackChecker && c.IsWhite));
+            int opponentCount = 0;
+            foreach (var cell in area)
+            {
+                if (cell.Cellvalueenum != currentPlayer && cell.Cellvalueenum != CellValueEnum.Empty)
+                {
+                    opponentCount++;
+                }
+            }
+            return opponentCount == 0;
         }
 
-        public IEnumerator<Cell> GetEnumerator() =>
-            _area.Cast<Cell>().GetEnumerator();
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        public IEnumerator<Cell> GetEnumerator()
+        {
+            return area.Cast<Cell>().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
