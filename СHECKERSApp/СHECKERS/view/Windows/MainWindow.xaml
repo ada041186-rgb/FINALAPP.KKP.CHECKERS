@@ -7,15 +7,11 @@
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen">
 
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
 
     <Window.Resources>
         <conv:CellBoardColorConverter        x:Key="CellBoardColorConverter"/>
         <conv:CellValueToColorConverter      x:Key="CellValueToColorConverter"/>
         <conv:CellValueToVisibilityConverter x:Key="CellValueToVisibilityConverter"/>
-        <conv:BoolToColorConverter           x:Key="BoolToColorConverter"/>
     </Window.Resources>
 
     <Grid Background="#1A0F0A">

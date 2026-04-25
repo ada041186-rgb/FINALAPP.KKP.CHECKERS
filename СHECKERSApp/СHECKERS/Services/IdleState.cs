@@ -1,11 +1,11 @@
-﻿using CHECKERS.Models;
+﻿using CHECKERS.ViewModels;
 using System.Linq;
 
 namespace CHECKERS.Services
 {
     public class IdleState : IGameState
     {
-        public void HandleCellClick(GameContext ctx, Cell cell)
+        public void HandleCellClick(IStateContext ctx, CellViewModel cell)
         {
             if (!cell.BelongsTo(ctx.CurrentPlayer)) return;
 
@@ -24,7 +24,6 @@ namespace CHECKERS.Services
             ctx.SelectedCell = cell;
             ctx.AvailableMoves = moves.ToList();
             cell.Act = true;
-
             foreach (var m in moves)
                 m.To.IsHighlighted = true;
 

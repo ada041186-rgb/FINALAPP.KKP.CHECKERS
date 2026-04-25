@@ -1,13 +1,17 @@
-﻿using CHECKERS.Models;
+﻿using CHECKERS.ViewModels;
 
 namespace CHECKERS.Services
 {
-    public static class MoveStrategyFactory
+    public class MoveStrategyFactory : IMoveStrategyFactory
     {
-        private static readonly IMoveStrategy Checker = new CheckerMoveStrategy();
-        private static readonly IMoveStrategy King = new KingMoveStrategy();
+        private readonly MoveStrategyRegistry _registry;
 
-        public static IMoveStrategy Get(Cell cell) =>
-            cell.IsKing ? King : Checker;
+        public MoveStrategyFactory(MoveStrategyRegistry registry)
+        {
+            _registry = registry;
+        }
+
+        public IMoveStrategy Get(CellViewModel cell) =>
+            _registry.Resolve(cell);
     }
 }
