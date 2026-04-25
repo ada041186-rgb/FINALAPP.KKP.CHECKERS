@@ -1,11 +1,13 @@
 ﻿using CHECKERS.Models;
+using CHECKERS.ViewModels;
+using CHECKERS.ViewModels.Base;
 using System.Collections.Generic;
 
 namespace CHECKERS.Services
 {
     public class CheckerMoveStrategy : IMoveStrategy
     {
-        public IEnumerable<Move> GetSimpleMoves(Board board, Cell cell)
+        public IEnumerable<Move> GetSimpleMoves(Board board, CellViewModel cell)
         {
             int dir = cell.IsWhite ? -1 : 1;
             int[][] steps = { new[] { dir, -1 }, new[] { dir, 1 } };
@@ -14,11 +16,11 @@ namespace CHECKERS.Services
             {
                 int r = cell.Row + s[0], c = cell.Column + s[1];
                 if (board.InBounds(r, c) && board[r, c].IsEmpty)
-                    yield return new Move(cell, board[r, c]);
+                    yield return new Move(cell, board[r, c].ViewModel);
             }
         }
 
-        public IEnumerable<Move> GetCaptureMoves(Board board, Cell cell)
+        public IEnumerable<Move> GetCaptureMoves(Board board, CellViewModel cell)
         {
             int[][] dirs = { new[] { -1, -1 }, new[] { -1, 1 }, new[] { 1, -1 }, new[] { 1, 1 } };
 
@@ -29,8 +31,8 @@ namespace CHECKERS.Services
 
                 if (!board.InBounds(mr, mc) || !board.InBounds(tr, tc)) continue;
 
-                var mid = board[mr, mc];
-                var dest = board[tr, tc];
+                var mid = board[mr, mc].ViewModel;
+                var dest = board[tr, tc].ViewModel;
 
                 bool midIsOpponent = cell.IsWhite ? mid.IsBlack : mid.IsWhite;
 

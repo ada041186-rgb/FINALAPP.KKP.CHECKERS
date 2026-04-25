@@ -1,9 +1,9 @@
-﻿using CHECKERS.Models;
+﻿using CHECKERS.ViewModels;
 
 namespace CHECKERS.Services
 {
     public interface IGameState
     {
-        void HandleCellClick(GameContext ctx, Cell cell);
+        void HandleCellClick(IStateContext ctx, CellViewModel cell);
     }
 }

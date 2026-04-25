@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CHECKERS.ViewModels;
 
 namespace CHECKERS.Models
 {
-    public record Move(Cell From, Cell To, Cell? Captured = null);
+    public record Move(CellViewModel From, CellViewModel To, CellViewModel? Captured = null);
 }
