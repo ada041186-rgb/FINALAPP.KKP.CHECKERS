@@ -1,0 +1,95 @@
+﻿<Window x:Class="СHECKERS.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:СHECKERS.ViewModels"
+        xmlns:conv="clr-namespace:СHECKERS.Conventor"
+        Title="Шашки" Height="560" Width="520"
+        ResizeMode="CanMinimize">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <conv:CellColorConverter x:Key="CellColorConverter"/>
+        <conv:CellValueToColorConverter x:Key="CellValueToColorConverter"/>
+        <conv:CellValueToVisibilityConverter x:Key="CellValueToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid Background="#2C1810">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Background="#3D2314">
+            <MenuItem Header="Гра" Foreground="White" Background="#3D2314">
+                <MenuItem Header="Нова гра" Command="{Binding NewGameCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <TextBlock Grid.Row="1"
+                   Text="{Binding CurrentPlayerText}"
+                   Foreground="White"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,8,0,8"/>
+
+        <ItemsControl Grid.Row="2"
+                      ItemsSource="{Binding Board}"
+                      AlternationCount="64"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Rows="8" Columns="8"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Width="58" Height="58"
+                            Command="{Binding DataContext.CellCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                            CommandParameter="{Binding}">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Setter Property="Background" Value="#8B4513"/>
+                                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    BorderBrush="{TemplateBinding BorderBrush}">
+                                                <Ellipse Width="44" Height="44"
+                                                         Fill="{Binding Cellvalueenum, Converter={StaticResource CellValueToColorConverter}}"
+                                                         Visibility="{Binding Cellvalueenum, Converter={StaticResource CellValueToVisibilityConverter}}"
+                                                         Stroke="Gray"
+                                                         StrokeThickness="2"
+                                                         Margin="4"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                        <Setter Property="Background" Value="#8B4513"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding Act}" Value="True">
+                                        <Setter Property="BorderBrush" Value="Yellow"/>
+                                        <Setter Property="BorderThickness" Value="3"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
