@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace СHECKERS.ViewModels.Base
+namespace CHECKERS.ViewModels.Base
 {
     public class ViewModel : INotifyPropertyChanged
     {

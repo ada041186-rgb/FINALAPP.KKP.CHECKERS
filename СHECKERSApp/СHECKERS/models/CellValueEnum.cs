@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace СHECKERS.Models
+namespace CHECKERS.Models
 {
     public enum CellValueEnum
     {
         Empty,
         WhiteChecker,
-        BlackChecker
+        BlackChecker,
+        WhiteKing, 
+        BlackKing
     }
 }

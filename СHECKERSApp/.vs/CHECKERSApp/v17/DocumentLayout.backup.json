@@ -1,0 +1,413 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\convertor\\cellboardcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\convertor\\cellboardcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\boardsetupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\boardsetupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\models\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\models\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\models\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\models\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\models\\cellvalueenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\models\\cellvalueenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\convertor\\cellvalueconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\convertor\\cellvalueconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\kingmovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\kingmovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\idlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\idlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\gamerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\gamerules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\gamecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\gamecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\checkermovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\checkermovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\view\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\view\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\viewmodels\\base\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\viewmodels\\base\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\viewmodels\\base\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\viewmodels\\base\\command.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\pieceselectedstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\pieceselectedstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\movestrategyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\movestrategyfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\services\\imovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\services\\imovestrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\convertor\\cellcolorconventer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\convertor\\cellcolorconventer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|d:\\2 \u043A\u0443\u0440\u0441 2\\\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\finalappp\\\u0441heckersapp\\\u0441heckers\\view\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63036FA3-C07C-4883-A8AC-484F7B31FAD3}|\u0421HECKERS\\CHECKERS.csproj|solutionrelative:\u0441heckers\\view\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KingMoveStrategy.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\KingMoveStrategy.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\KingMoveStrategy.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\KingMoveStrategy.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\KingMoveStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:42:02.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CellValueConverters.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellValueConverters.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Convertor\\CellValueConverters.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellValueConverters.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Convertor\\CellValueConverters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:14:59.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CellValueEnum.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\CellValueEnum.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Models\\CellValueEnum.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\CellValueEnum.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Models\\CellValueEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:15:30.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Cell.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Models\\Cell.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Cell.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Models\\Cell.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:15:18.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Board.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Board.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Models\\Board.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Board.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Models\\Board.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:15:15.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Move.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Move.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Models\\Move.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Models\\Move.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Models\\Move.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:39:17.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BoardSetupService.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\BoardSetupService.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\BoardSetupService.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\BoardSetupService.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\BoardSetupService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:45:36.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IdleState.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IdleState.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\IdleState.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IdleState.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\IdleState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:44:12.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CellBoardColorConverter.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellBoardColorConverter.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Convertor\\CellBoardColorConverter.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellBoardColorConverter.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Convertor\\CellBoardColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:50:00.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IGameState.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IGameState.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\IGameState.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IGameState.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\IGameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:43:36.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GameRules.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\GameRules.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\GameRules.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\GameRules.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\GameRules.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:42:36.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameContext.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\GameContext.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\GameContext.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\GameContext.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\GameContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:43:55.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CheckerMoveStrategy.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\CheckerMoveStrategy.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\CheckerMoveStrategy.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\CheckerMoveStrategy.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\CheckerMoveStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:40:37.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\View\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\View\\Windows\\MainWindow.xaml",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\View\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "\u0421HECKERS\\View\\Windows\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T14:17:16.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "\u0421HECKERS\\ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwDwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:16:14.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ViewModel.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\Base\\ViewModel.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\ViewModels\\Base\\ViewModel.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\Base\\ViewModel.cs",
+              "RelativeToolTip": "\u0421HECKERS\\ViewModels\\Base\\ViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:16:11.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Command.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\Base\\Command.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\ViewModels\\Base\\Command.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\ViewModels\\Base\\Command.cs",
+              "RelativeToolTip": "\u0421HECKERS\\ViewModels\\Base\\Command.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:16:07.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PieceSelectedState.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\PieceSelectedState.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\PieceSelectedState.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\PieceSelectedState.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\PieceSelectedState.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:44:33.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MoveStrategyFactory.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\MoveStrategyFactory.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\MoveStrategyFactory.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\MoveStrategyFactory.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\MoveStrategyFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:42:21.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IMoveStrategy.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IMoveStrategy.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Services\\IMoveStrategy.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Services\\IMoveStrategy.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Services\\IMoveStrategy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T13:40:18.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CellColorConventer.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellColorConventer.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\Convertor\\CellColorConventer.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\Convertor\\CellColorConventer.cs",
+              "RelativeToolTip": "\u0421HECKERS\\Convertor\\CellColorConventer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:14:42.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\App.xaml",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\App.xaml",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\App.xaml",
+              "RelativeToolTip": "\u0421HECKERS\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-24T14:16:33.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\View\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "\u0421HECKERS\\View\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\2 \u043A\u0443\u0440\u0441 2\\\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u044E\u0432\u0430\u043D\u043D\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u043E\u0433\u043E \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0435\u043D\u043D\u044F\\FINALAPPP\\\u0421HECKERSApp\\\u0421HECKERS\\View\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "\u0421HECKERS\\View\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T14:17:42.926Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

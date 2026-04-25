@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace СHECKERS.ViewModels.Base
+namespace CHECKERS.ViewModels.Base
 {
     public class Command : ICommand
     {
