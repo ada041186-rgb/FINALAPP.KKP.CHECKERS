@@ -1,71 +1,49 @@
-﻿using СHECKERS.ViewModels.Base;
+﻿using CHECKERS.Models;
+using CHECKERS.ViewModels.Base;
 
-namespace СHECKERS.Models
+namespace CHECKERS.Models
 {
     public class Cell : ViewModel
     {
-        private CellValueEnum cellValueEnum;
-        private bool act;
-        private int row;
-        private int column;
-        private Board? board;
+        private CellValueEnum _cellValueEnum;
+        private bool _act;
+        private bool _isHighlighted; 
+
+        public int Row { get; }
+        public int Column { get; }
 
         public CellValueEnum Cellvalueenum
         {
-            get => cellValueEnum;
-            set
-            {
-                cellValueEnum = value;
-                OnPropertyChanged();
-            }
+            get => _cellValueEnum;
+            set { _cellValueEnum = value; OnPropertyChanged(); }
         }
 
         public bool Act
         {
-            get => act;
-            set
-            {
-                act = value;
-                OnPropertyChanged();
-            }
+            get => _act;
+            set { _act = value; OnPropertyChanged(); }
         }
 
-        public int Row
+        public bool IsHighlighted
         {
-            get => row;
-            set
-            {
-                row = value;
-                OnPropertyChanged();
-            }
+            get => _isHighlighted;
+            set { _isHighlighted = value; OnPropertyChanged(); }
         }
 
-        public int Column
-        {
-            get => column;
-            set
-            {
-                column = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Board? Board
-        {
-            get => board;
-            set
-            {
-                board = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Cell(int row, int column, Board board)
+        public Cell(int row, int column)
         {
             Row = row;
             Column = column;
-            Board = board;
-            cellValueEnum = CellValueEnum.Empty;
+            _cellValueEnum = CellValueEnum.Empty;
         }
+
+        public bool IsWhite => Cellvalueenum == CellValueEnum.WhiteChecker || Cellvalueenum == CellValueEnum.WhiteKing;
+        public bool IsBlack => Cellvalueenum == CellValueEnum.BlackChecker || Cellvalueenum == CellValueEnum.BlackKing;
+        public bool IsKing => Cellvalueenum == CellValueEnum.WhiteKing || Cellvalueenum == CellValueEnum.BlackKing;
+        public bool IsEmpty => Cellvalueenum == CellValueEnum.Empty;
+
+        public bool BelongsTo(CellValueEnum player) =>
+            (player == CellValueEnum.WhiteChecker && IsWhite) ||
+            (player == CellValueEnum.BlackChecker && IsBlack);
     }
 }

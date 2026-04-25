@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2 курс 2\\Конструювання програмного забезпечення\\FINALAPPP\\СHECKERSApp\\СHECKERS\\СHECKERS.csproj",
-      "projectName": "СHECKERS",
-      "projectPath": "D:\\2 курс 2\\Конструювання програмного забезпечення\\FINALAPPP\\СHECKERSApp\\СHECKERS\\СHECKERS.csproj",
+      "projectUniqueName": "D:\\2 курс 2\\Конструювання програмного забезпечення\\FINALAPPP\\СHECKERSApp\\СHECKERS\\CHECKERS.csproj",
+      "projectName": "CHECKERS",
+      "projectPath": "D:\\2 курс 2\\Конструювання програмного забезпечення\\FINALAPPP\\СHECKERSApp\\СHECKERS\\CHECKERS.csproj",
       "packagesPath": "C:\\Users\\kosta\\.nuget\\packages\\",
       "outputPath": "D:\\2 курс 2\\Конструювання програмного забезпечення\\FINALAPPP\\СHECKERSApp\\СHECKERS\\obj\\",
       "projectStyle": "PackageReference",
