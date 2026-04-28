@@ -1,4 +1,5 @@
-﻿using CHECKERS.ViewModels;
+﻿using CHECKERS.Models;
+using CHECKERS.ViewModels;
 using System.Linq;
 
 namespace CHECKERS.Services
@@ -24,6 +25,7 @@ namespace CHECKERS.Services
             ctx.SelectedCell = cell;
             ctx.AvailableMoves = moves.ToList();
             cell.Act = true;
+
             foreach (var m in moves)
                 m.To.IsHighlighted = true;
 

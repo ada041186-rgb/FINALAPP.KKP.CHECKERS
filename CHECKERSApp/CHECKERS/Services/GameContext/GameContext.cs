@@ -11,14 +11,15 @@ namespace CHECKERS.Services
         public CellViewModel? SelectedCell { get; set; }
         public List<Move> AvailableMoves { get; set; } = new();
         public IGameState State { get; private set; }
-        public GameRules Rules { get; }
+
+        public IGameRules Rules { get; }
         public IMoveExecutor MoveExecutor { get; }
         public bool GameOver { get; set; }
 
         private readonly IBoardSetupService _setup;
         private List<CellViewModel> _cellViewModels = new();
 
-        public GameContext(GameRules rules, IMoveExecutor moveExecutor, IBoardSetupService setup)
+        public GameContext(IGameRules rules, IMoveExecutor moveExecutor, IBoardSetupService setup)
         {
             Rules = rules;
             MoveExecutor = moveExecutor;
@@ -49,6 +50,7 @@ namespace CHECKERS.Services
             TransitionTo(new IdleState());
             _setup.Setup(board);
         }
+
         public IReadOnlyList<CellViewModel> GetCellViewModels() => _cellViewModels;
         public CellValueEnum? GetWinner() => GameOver ? CurrentPlayer : null;
 

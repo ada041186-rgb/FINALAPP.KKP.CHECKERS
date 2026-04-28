@@ -1,16 +1,15 @@
 ﻿using CHECKERS.Models;
 using CHECKERS.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CHECKERS.Services
+namespace CHECKERS.Services.States
 {
-    public interface IStateContext
+    public interface IStateManager
     {
-        Board Board { get; }
-        CellValueEnum CurrentPlayer { get; set; }
-        bool GameOver { get; set; }
-        GameRules Rules { get; }
-        IMoveExecutor MoveExecutor { get; }
         List<Move> AvailableMoves { get; set; }
         CellViewModel? SelectedCell { get; set; }
         void TransitionTo(IGameState state);

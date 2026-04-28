@@ -1,4 +1,5 @@
 ﻿using CHECKERS.ViewModels;
+using System.Linq;
 
 namespace CHECKERS.Services
 {
@@ -6,8 +7,7 @@ namespace CHECKERS.Services
     {
         public void HandleCellClick(IStateContext ctx, CellViewModel cell)
         {
-            var move = ctx.AvailableMoves
-                .FirstOrDefault(m => m.To == cell);
+            var move = ctx.AvailableMoves.FirstOrDefault(m => m.To == cell);
 
             if (move != null)
             {

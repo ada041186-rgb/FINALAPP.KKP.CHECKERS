@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CHECKERS.Services
 {
-    public class GameRules
+    public class GameRules : IGameRules
     {
         private readonly IMoveStrategyFactory _factory;
 
@@ -43,11 +43,9 @@ namespace CHECKERS.Services
                 ? CellValueEnum.BlackChecker
                 : CellValueEnum.WhiteChecker;
 
-            bool opponentHasMove = board
+            return !board
                 .Where(c => c.BelongsTo(opponent))
                 .Any(c => GetAvailableMoves(board, c.ViewModel).Count > 0);
-
-            return !opponentHasMove;
         }
     }
 }
