@@ -12,7 +12,10 @@ A classic game of **Checkers (Draughts)** implemented in C# using WPF and MVVM a
 - Kings can move and capture in all four diagonal directions across multiple squares
 - Visual highlighting of selected pieces and available moves
 - Win detection (no pieces left or no valid moves)
-- Settings window with resolution options and fullscreen toggle
+- **Single-player mode against an AI opponent with selectable difficulty (Easy, Medium, Hard)**
+- **Heuristic-based move evaluation for the Hard AI difficulty (prioritizing kings, edge safety, and back-row defense)**
+- **Real-time AI toggle during gameplay to easily switch between PvP and PvE modes**
+- Settings window with resolution options, fullscreen toggle, and AI difficulty selection
 - Settings are saved to a local `settings.json` file and restored on next launch
 - Main menu with Play, Settings, and Exit options
 - In-game menu for New Game, Main Menu, Settings, and Exit
@@ -40,10 +43,11 @@ Or open the `.sln` file in **Visual Studio 2022+** and press `F5`.
  
 ```
 CHECKERS/
-├── Models/           # Domain models: Board, Cell, Move, enums, settings
+├── Models/           # Domain models: Board, Cell, Move, enums, settings, AIDifficulty
 ├── ViewModels/       # MVVM ViewModels: MainWindowViewModel, CellViewModel, SettingsViewModel
 ├── Views/            # WPF Windows and XAML
 ├── Services/         # Game logic, rules, state machine, strategies
+│   ├── AI/           # AI opponent logic, heuristics, and mode tracking
 │   ├── Settings/     # Settings load/save
 │   └── States/       # State pattern interfaces
 ├── Convertor/        # WPF value converters
@@ -136,3 +140,7 @@ Board size (8×8), piece colors, and cell states are represented by named types 
  
 ### 7. Separate Query from Modifier (CQS)
 Methods either return data (`GetAvailableMoves`, `GetWinner`) or cause side effects (`Execute`, `Switch`, `ClearHighlights`) — not both. This makes the codebase easier to reason about and test.
+
+### 8. Asynchronous Execution (Task-based UI)
+
+The AI move execution was refactored to use async/await and Task.Delay(). This prevents the UI thread from freezing during AI computations and provides a natural delay, improving the user experience during PvE matches.
