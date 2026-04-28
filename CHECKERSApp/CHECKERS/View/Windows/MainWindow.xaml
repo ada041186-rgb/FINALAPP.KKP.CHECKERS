@@ -313,7 +313,12 @@
                             </StackPanel>
                         </StackPanel>
                     </Border>
-
+                    <Button Content="{Binding AIButtonText}"
+                            Command="{Binding ToggleAICommand}"
+                            Height="30" FontSize="12" Margin="0,0,0,10"
+                            Background="#4A2010" Foreground="#F0E6D3"
+                            BorderThickness="0" Cursor="Hand"/>
+                    
                     <Button Content="💡 Підказка"
                     Command="{Binding HintCommand}"
                     Height="30" FontSize="12" Margin="0,0,0,4"

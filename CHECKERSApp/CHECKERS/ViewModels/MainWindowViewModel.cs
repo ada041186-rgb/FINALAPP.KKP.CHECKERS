@@ -9,6 +9,8 @@ namespace CHECKERS.ViewModels
 {
     public class MainWindowViewModel : ViewModel
     {
+        private readonly IAIOpponentService _ai;
+        private readonly IAIModeService _aiMode;
         private readonly IGameContext _ctx;
         private readonly IDialogService _dialog;
         private readonly IScreenNavigator _navigator;
@@ -62,6 +64,7 @@ namespace CHECKERS.ViewModels
                 ? "Хід:  Білі"
                 : "Хід:  Чорні";
 
+        public ICommand ToggleAICommand { get; }
         public ICommand PlayCommand { get; }
         public ICommand OpenSettingsCommand { get; }
         public ICommand ExitCommand { get; }
@@ -73,6 +76,8 @@ namespace CHECKERS.ViewModels
         public ICommand LoadGameCommand { get; }
 
         public MainWindowViewModel(
+            IAIOpponentService ai,
+            IAIModeService aiMode,
             IGameContext ctx,
             IDialogService dialog,
             IScreenNavigator navigator,
@@ -85,6 +90,8 @@ namespace CHECKERS.ViewModels
             IGameSaveService save,
             IGameSnapshotService snapshot)
         {
+            _ai = ai;
+            _aiMode = aiMode;
             _ctx = ctx;
             _dialog = dialog;
             _navigator = navigator;
@@ -113,6 +120,11 @@ namespace CHECKERS.ViewModels
             ExitCommand = new Command(_ => Application.Current.Shutdown());
             NewGameCommand = new Command(_ => StartNewGame());
             BackToMenuCommand = new Command(_ => _navigator.GoToMenu());
+            ToggleAICommand = new Command(_ =>
+            {
+                _aiMode.Toggle();
+                OnPropertyChanged(nameof(AIButtonText));
+            });
 
             HintCommand = new Command(_ =>
             {
@@ -187,7 +199,8 @@ namespace CHECKERS.ViewModels
             {
                 _timer.Reset();
                 _timer.Start();
-                return;
+                TryAIMove();  
+                return;     
             }
 
             _timer.Stop();
@@ -198,8 +211,26 @@ namespace CHECKERS.ViewModels
             OnPropertyChanged(nameof(WhiteWins));
             OnPropertyChanged(nameof(BlackWins));
             StartNewGame();
-        }
 
+        }
+        private async void TryAIMove()
+        {
+            if (!_aiMode.IsEnabled) return;
+            if (_ctx.GameOver) return;
+            if (!_ai.IsAITurn(_ctx.CurrentPlayer)) return;
+
+            await Task.Delay(600);
+
+            if (!_aiMode.IsEnabled || _ctx.GameOver) return;
+
+            var move = _ai.ChooseMove(_ctx.Board, _ctx.CurrentPlayer);
+            if (move == null) return;
+
+            _ctx.HandleClick(move.From);
+            _ctx.HandleClick(move.To);
+            RefreshAfterMove();
+        }
+        public string AIButtonText => _aiMode.IsEnabled ? " AI: Увімк" : " AI: Вимк";
         private void RebuildMoveLog()
         {
             MoveLog.Clear();
