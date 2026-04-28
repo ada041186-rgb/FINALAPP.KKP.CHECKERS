@@ -133,124 +133,210 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Menu Grid.Row="0" Background="#2D1810">
                 <MenuItem Header="Грати" Foreground="White" Background="#2D1810">
                     <MenuItem Header="Нова гра"
-                              Command="{Binding NewGameCommand}"
-                              Background="#2D1810" Foreground="White"/>
+                      Command="{Binding NewGameCommand}"
+                      Background="#2D1810" Foreground="White"/>
+                    <MenuItem Header="Зберегти гру"
+                      Command="{Binding SaveGameCommand}"
+                      Background="#2D1810" Foreground="White"/>
+                    <MenuItem Header="Завантажити гру"
+                      Command="{Binding LoadGameCommand}"
+                      Background="#2D1810" Foreground="White"/>
                     <MenuItem Header="Головне меню"
-                              Command="{Binding BackToMenuCommand}"
-                              Background="#2D1810" Foreground="White"/>
+                      Command="{Binding BackToMenuCommand}"
+                      Background="#2D1810" Foreground="White"/>
                 </MenuItem>
                 <MenuItem Header="Налаштування"
-                          Foreground="White" Background="#2D1810"
-                          Command="{Binding OpenSettingsCommand}"/>
+                  Foreground="White" Background="#2D1810"
+                  Command="{Binding OpenSettingsCommand}"/>
                 <MenuItem Header="Вийти"
-                          Foreground="White" Background="#2D1810"
-                          Command="{Binding ExitCommand}"/>
+                  Foreground="White" Background="#2D1810"
+                  Command="{Binding ExitCommand}"/>
             </Menu>
 
-            <TextBlock Grid.Row="1"
-                       Text="{Binding CurrentPlayerText}"
-                       Foreground="#F0E6D3"
-                       FontSize="18" FontWeight="Bold"
-                       HorizontalAlignment="Center"
-                       Margin="0,10,0,10"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="160"/>
+                </Grid.ColumnDefinitions>
 
-            <ItemsControl Grid.Row="2"
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal"
+                        HorizontalAlignment="Center" Margin="0,8,0,4">
+                        <TextBlock Text="{Binding CurrentPlayerText}"
+                           Foreground="#F0E6D3"
+                           FontSize="16" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+                        <TextBlock Text="  |  ⏱ "
+                           Foreground="#8B6343" FontSize="14"
+                           VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding SecondsLeft}"
+                           Foreground="#F0E6D3" FontSize="16" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+                        <TextBlock Text=" с"
+                           Foreground="#8B6343" FontSize="14"
+                           VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <ItemsControl Grid.Row="1"
                           ItemsSource="{Binding Cells}"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Rows="8" Columns="8"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Button Width="60" Height="60"
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Rows="8" Columns="8"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Width="60" Height="60"
                                 Command="{Binding DataContext.CellCommand,
                                           RelativeSource={RelativeSource AncestorType=Window}}"
                                 CommandParameter="{Binding}">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                    <Setter Property="BorderThickness" Value="0"/>
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <MultiBinding Converter="{StaticResource CellBoardColorConverter}">
-                                                <Binding Path="Row"/>
-                                                <Binding Path="Column"/>
-                                            </MultiBinding>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}"
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <MultiBinding Converter="{StaticResource CellBoardColorConverter}">
+                                                        <Binding Path="Row"/>
+                                                        <Binding Path="Column"/>
+                                                    </MultiBinding>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Background="{TemplateBinding Background}"
                                                         BorderBrush="{TemplateBinding BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}">
-                                                    <Grid>
-                                                        <Ellipse x:Name="hint"
+                                                            <Grid>
+                                                                <Ellipse x:Name="hint"
                                                                  Width="24" Height="24"
                                                                  Fill="#BB44FF44"
                                                                  Visibility="Collapsed"/>
-                                                        <Ellipse Width="46" Height="46"
+                                                                <Ellipse Width="46" Height="46"
                                                                  Fill="{Binding Cellvalueenum,
                                                                      Converter={StaticResource CellValueToColorConverter}}"
                                                                  Visibility="{Binding Cellvalueenum,
                                                                      Converter={StaticResource CellValueToVisibilityConverter}}"
                                                                  Stroke="#333" StrokeThickness="2"/>
-                                                        <TextBlock Text="♛"
-                                                                   FontSize="20"
+                                                                <TextBlock Text="♛" FontSize="20"
                                                                    HorizontalAlignment="Center"
                                                                    VerticalAlignment="Center">
-                                                            <TextBlock.Style>
-                                                                <Style TargetType="TextBlock">
-                                                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                                                    <Style.Triggers>
-                                                                        <DataTrigger Binding="{Binding Cellvalueenum}"
-                                                                                     Value="WhiteKing">
-                                                                            <Setter Property="Visibility" Value="Visible"/>
-                                                                            <Setter Property="Foreground" Value="#333"/>
-                                                                        </DataTrigger>
-                                                                        <DataTrigger Binding="{Binding Cellvalueenum}"
-                                                                                     Value="BlackKing">
-                                                                            <Setter Property="Visibility" Value="Visible"/>
-                                                                            <Setter Property="Foreground" Value="Gold"/>
-                                                                        </DataTrigger>
-                                                                    </Style.Triggers>
-                                                                </Style>
-                                                            </TextBlock.Style>
-                                                        </TextBlock>
-                                                    </Grid>
-                                                </Border>
-                                                <ControlTemplate.Triggers>
-                                                    <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
-                                                        <Setter TargetName="hint" Property="Visibility" Value="Visible"/>
-                                                    </DataTrigger>
-                                                </ControlTemplate.Triggers>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Act}" Value="True">
-                                            <Setter Property="BorderBrush" Value="Yellow"/>
-                                            <Setter Property="BorderThickness" Value="3"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock">
+                                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding Cellvalueenum}" Value="WhiteKing">
+                                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                                    <Setter Property="Foreground" Value="#333"/>
+                                                                                </DataTrigger>
+                                                                                <DataTrigger Binding="{Binding Cellvalueenum}" Value="BlackKing">
+                                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                                    <Setter Property="Foreground" Value="Gold"/>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                </TextBlock>
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
+                                                                <Setter TargetName="hint" Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Act}" Value="True">
+                                                    <Setter Property="BorderBrush" Value="Yellow"/>
+                                                    <Setter Property="BorderThickness" Value="3"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+
+                <StackPanel Grid.Column="1" Margin="8,8,8,0">
+
+                    <TextBlock Text="Рахунок" Foreground="#8B6343"
+                       FontSize="12" Margin="0,0,0,4"/>
+                    <Border Background="#2D1810" CornerRadius="4" Padding="8,6" Margin="0,0,0,10">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Білі: " Foreground="#F0E6D3" FontSize="13"/>
+                                <TextBlock Text="{Binding WhiteWins}" Foreground="White"
+                                   FontSize="13" FontWeight="Bold"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Чорні: " Foreground="#F0E6D3" FontSize="13"/>
+                                <TextBlock Text="{Binding BlackWins}" Foreground="White"
+                                   FontSize="13" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="Статистика" Foreground="#8B6343"
+                       FontSize="12" Margin="0,0,0,4"/>
+                    <Border Background="#2D1810" CornerRadius="4" Padding="8,6" Margin="0,0,0,10">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ходів: " Foreground="#F0E6D3" FontSize="12"/>
+                                <TextBlock Text="{Binding TotalMoves}" Foreground="White" FontSize="12"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Б збито: " Foreground="#F0E6D3" FontSize="12"/>
+                                <TextBlock Text="{Binding WhiteCaptured}" Foreground="White" FontSize="12"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ч збито: " Foreground="#F0E6D3" FontSize="12"/>
+                                <TextBlock Text="{Binding BlackCaptured}" Foreground="White" FontSize="12"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Button Content="💡 Підказка"
+                    Command="{Binding HintCommand}"
+                    Height="30" FontSize="12" Margin="0,0,0,4"
+                    Background="#3D2820" Foreground="#F0E6D3"
+                    BorderThickness="0" Cursor="Hand"/>
+                    <TextBlock Text="{Binding HintText}"
+                       Foreground="#8B6343" FontSize="11"
+                       TextWrapping="Wrap" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Журнал" Foreground="#8B6343"
+                       FontSize="12" Margin="0,0,0,4"/>
+                    <Border Background="#2D1810" CornerRadius="4" Padding="4">
+                        <ListBox ItemsSource="{Binding MoveLog}"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Foreground="#F0E6D3"
+                         FontSize="11"
+                         Height="180"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    </Border>
+
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

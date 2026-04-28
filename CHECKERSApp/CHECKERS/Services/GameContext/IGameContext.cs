@@ -6,11 +6,17 @@ namespace CHECKERS.Services
 {
     public interface IGameContext
     {
-        CellValueEnum CurrentPlayer { get; }
+        Board Board { get; }
+
+        CellValueEnum CurrentPlayer { get; set; }
+
         bool GameOver { get; }
+
         void HandleClick(CellViewModel cell);
         void NewGame();
-        IReadOnlyList<CellViewModel> GetCellViewModels(); 
+        IReadOnlyList<CellViewModel> GetCellViewModels();
         CellValueEnum? GetWinner();
+
+        void ClearHighlights();
     }
 }
