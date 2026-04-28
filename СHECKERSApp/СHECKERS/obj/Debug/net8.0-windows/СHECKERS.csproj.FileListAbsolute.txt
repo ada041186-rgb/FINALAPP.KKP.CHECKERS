@@ -1,2 +1,0 @@
-D:\2 курс 2\Конструювання програмного забезпечення\FINALAPPP\СHECKERSApp\СHECKERS\obj\Debug\net8.0-windows\App.g.cs
-D:\2 курс 2\Конструювання програмного забезпечення\FINALAPPP\СHECKERSApp\СHECKERS\obj\Debug\net8.0-windows\СHECKERS_MarkupCompile.cache
