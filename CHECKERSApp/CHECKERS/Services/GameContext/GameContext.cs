@@ -18,7 +18,12 @@ namespace CHECKERS.Services
 
         private readonly IBoardSetupService _setup;
         private List<CellViewModel> _cellViewModels = new();
-
+        public void SwitchTurn()
+        {
+            CurrentPlayer = CurrentPlayer == CellValueEnum.WhiteChecker
+                ? CellValueEnum.BlackChecker
+                : CellValueEnum.WhiteChecker;
+        }
         public GameContext(IGameRules rules, IMoveExecutor moveExecutor, IBoardSetupService setup)
         {
             Rules = rules;

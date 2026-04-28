@@ -9,17 +9,21 @@ namespace CHECKERS.Services
     {
         private readonly ISettingsService _settingsService;
         private readonly IWindowSettingsApplier _applier;
+        private readonly IAIOpponentService _ai; 
 
         public SettingsDialogService(ISettingsService settingsService,
-                                     IWindowSettingsApplier applier)
+                                     IWindowSettingsApplier applier,
+                                     IAIOpponentService ai)
         {
             _settingsService = settingsService;
             _applier = applier;
+            _ai = ai;
         }
 
         public void Show()
         {
-            var vm = new SettingsViewModel(_settingsService);
+            var vm = new SettingsViewModel(_settingsService, _ai);
+
             var win = new SettingsWindow(vm)
             {
                 Owner = Application.Current.MainWindow
