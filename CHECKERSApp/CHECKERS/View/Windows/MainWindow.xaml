@@ -12,6 +12,7 @@
         <conv:CellBoardColorConverter        x:Key="CellBoardColorConverter"/>
         <conv:CellValueToColorConverter      x:Key="CellValueToColorConverter"/>
         <conv:CellValueToVisibilityConverter x:Key="CellValueToVisibilityConverter"/>
+        <conv:LastMoveHighlightConverter     x:Key="LastMoveHighlightConverter"/>
     </Window.Resources>
 
     <Grid>
@@ -223,16 +224,27 @@
                                                         BorderBrush="{TemplateBinding BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}">
                                                             <Grid>
+                                                                <Rectangle x:Name="lastMoveOverlay">
+                                                                    <Rectangle.Fill>
+                                                                        <MultiBinding Converter="{StaticResource LastMoveHighlightConverter}">
+                                                                            <Binding Path="Row"/>
+                                                                            <Binding Path="Column"/>
+                                                                            <Binding Path="DataContext.LastMove"
+                                                                              RelativeSource="{RelativeSource AncestorType=Window}"/>
+                                                                        </MultiBinding>
+                                                                    </Rectangle.Fill>
+                                                                </Rectangle>
+
                                                                 <Ellipse x:Name="hint"
-                                                                 Width="24" Height="24"
-                                                                 Fill="#BB44FF44"
-                                                                 Visibility="Collapsed"/>
+                                                                   Width="24" Height="24"
+                                                                   Fill="#BB44FF44"
+                                                                   Visibility="Collapsed"/>
                                                                 <Ellipse Width="46" Height="46"
-                                                                 Fill="{Binding Cellvalueenum,
-                                                                     Converter={StaticResource CellValueToColorConverter}}"
-                                                                 Visibility="{Binding Cellvalueenum,
-                                                                     Converter={StaticResource CellValueToVisibilityConverter}}"
-                                                                 Stroke="#333" StrokeThickness="2"/>
+                                                                  Fill="{Binding Cellvalueenum,
+                                                                  Converter={StaticResource CellValueToColorConverter}}"
+                                                                  Visibility="{Binding Cellvalueenum,
+                                                                  Converter={StaticResource CellValueToVisibilityConverter}}"
+                                                                  Stroke="#333" StrokeThickness="2"/>
                                                                 <TextBlock Text="♛" FontSize="20"
                                                                    HorizontalAlignment="Center"
                                                                    VerticalAlignment="Center">

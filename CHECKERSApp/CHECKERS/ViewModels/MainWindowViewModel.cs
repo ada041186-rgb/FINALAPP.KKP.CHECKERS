@@ -51,7 +51,12 @@ namespace CHECKERS.ViewModels
             get => _secondsLeft;
             private set { _secondsLeft = value; OnPropertyChanged(); }
         }
-
+        private Move? _lastMove;
+        public Move? LastMove
+        {
+            get => _lastMove;
+            private set { _lastMove = value; OnPropertyChanged(); }
+        }
         private string _hintText = "";
         public string HintText
         {
@@ -195,12 +200,15 @@ namespace CHECKERS.ViewModels
             HintText = "";
             RefreshAllProperties();
 
+            var history = _history.GetHistory();
+            LastMove = history.Count > 0 ? history[^1] : null;
+
             if (!_ctx.GameOver)
             {
                 _timer.Reset();
                 _timer.Start();
-                TryAIMove();  
-                return;     
+                TryAIMove();
+                return;
             }
 
             _timer.Stop();
@@ -211,7 +219,6 @@ namespace CHECKERS.ViewModels
             OnPropertyChanged(nameof(WhiteWins));
             OnPropertyChanged(nameof(BlackWins));
             StartNewGame();
-
         }
         private async void TryAIMove()
         {
