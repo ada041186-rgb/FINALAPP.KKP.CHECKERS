@@ -1,5 +1,6 @@
 ﻿using CHECKERS.Models;
 using CHECKERS.Services;
+using CHECKERS.Services.AI;
 using CHECKERS.Services.Settings;
 using CHECKERS.View.Windows;
 using CHECKERS.ViewModels;
@@ -73,6 +74,8 @@ namespace CHECKERS
             s.AddSingleton<IHintService, HintService>();
             s.AddSingleton<IGameSaveService, GameSaveService>();
             s.AddSingleton<ITurnTimerService>(_ => new TurnTimerService(60));
+
+            s.AddSingleton<IMoveEvaluator, BasicMoveEvaluator>();
 
             s.AddSingleton<IScreenNavigator>(sp =>
             {
