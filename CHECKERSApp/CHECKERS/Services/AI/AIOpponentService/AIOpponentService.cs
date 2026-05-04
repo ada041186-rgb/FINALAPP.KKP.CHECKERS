@@ -8,6 +8,7 @@ namespace CHECKERS.Services
     public class AIOpponentService : IAIOpponentService
     {
         private readonly IGameRules _rules;
+        private readonly IMoveEvaluator _moveEvaluator;
         private readonly Random _rng = new();
 
         public AIDifficulty Difficulty { get; set; } = AIDifficulty.Medium;
@@ -15,9 +16,10 @@ namespace CHECKERS.Services
         public bool IsAITurn(CellValueEnum currentPlayer) =>
             currentPlayer == CellValueEnum.BlackChecker;
 
-        public AIOpponentService(IGameRules rules)
+        public AIOpponentService(IGameRules rules, IMoveEvaluator moveEvaluator)
         {
             _rules = rules;
+            _moveEvaluator = moveEvaluator;
         }
 
         public Move? ChooseMove(Board board, CellValueEnum player)
@@ -59,30 +61,9 @@ namespace CHECKERS.Services
             var captures = moves.Where(m => m.Captured != null).ToList();
 
             if (captures.Any())
-                return captures.OrderByDescending(m => EvaluateMove(m)).First();
+                return captures.OrderByDescending(m => _moveEvaluator.Evaluate(m)).First();
 
-            return moves.OrderByDescending(m => EvaluateMove(m)).First();
-        }
-
-
-        private int EvaluateMove(Move move)
-        {
-            int score = 0;
-
-            score += move.To.Row;
-
-            if (move.To.Row == 7) score += 10;
-
-            if (move.To.Column == 0 || move.To.Column == 7)
-                score += 3;
-
-            if (move.From.Row == 0)
-                score -= 4;
-
-            if (move.To.Column == 3 || move.To.Column == 4)
-                score += 2;
-
-            return score;
+            return moves.OrderByDescending(m => _moveEvaluator.Evaluate(m)).First();
         }
     }
 }
