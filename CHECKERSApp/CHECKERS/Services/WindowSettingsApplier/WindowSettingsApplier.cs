@@ -1,4 +1,4 @@
-﻿using CHECKERS.Models;
+using CHECKERS.Models;
 using System.Windows;
 
 namespace CHECKERS.Services
@@ -7,27 +7,60 @@ namespace CHECKERS.Services
     {
         public void Apply(AppSettings settings)
         {
-            var w = Application.Current.MainWindow;
-            if (w == null) return;
+            var window = Application.Current.MainWindow;
+            if (window == null) return;
 
             if (settings.IsFullScreen)
             {
-                w.WindowStyle = WindowStyle.None;
-                w.WindowState = WindowState.Maximized;
+                ApplyFullScreen(window);
                 return;
             }
 
-            w.WindowStyle = WindowStyle.SingleBorderWindow;
-            w.WindowState = WindowState.Normal;
+            ApplyWindowedMode(window);
+            ApplyResolution(window, settings.Resolution);
+        }
 
-            var parts = settings.Resolution.Split('×');
-            if (parts.Length >= 2
-                && double.TryParse(parts[0].Trim(), out double width)
-                && double.TryParse(parts[1].Trim().Split(' ')[0], out double height))
+        private static void ApplyFullScreen(Window window)
+        {
+            window.WindowStyle = WindowStyle.None;
+            window.WindowState = WindowState.Maximized;
+        }
+
+        private static void ApplyWindowedMode(Window window)
+        {
+            window.WindowStyle = WindowStyle.SingleBorderWindow;
+            window.WindowState = WindowState.Normal;
+        }
+
+        private static void ApplyResolution(Window window, string resolution)
+        {
+            if (!TryParseResolution(resolution, out double width, out double height))
             {
-                w.Width = width;
-                w.Height = height;
+                return;
             }
+
+            window.Width = width;
+            window.Height = height;
+        }
+
+        private static bool TryParseResolution(string resolution, out double width, out double height)
+        {
+            width = 0;
+            height = 0;
+
+            if (string.IsNullOrWhiteSpace(resolution))
+            {
+                return false;
+            }
+
+            var parts = resolution.Split('×');
+            if (parts.Length < 2)
+            {
+                return false;
+            }
+
+            return double.TryParse(parts[0].Trim(), out width)
+                && double.TryParse(parts[1].Trim().Split(' ')[0], out height);
         }
     }
 }
