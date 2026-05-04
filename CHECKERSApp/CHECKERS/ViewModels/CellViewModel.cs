@@ -7,7 +7,6 @@ namespace CHECKERS.ViewModels
     {
         private bool _act;
         private bool _isHighlighted;
-        private CellValueEnum _cellvalueenum;
 
         public Cell Cell { get; }
         public int Row => Cell.Row;
@@ -15,17 +14,14 @@ namespace CHECKERS.ViewModels
 
         public CellValueEnum Cellvalueenum
         {
-            get => _cellvalueenum;
-            set
-            {
-                _cellvalueenum = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(IsWhite));
-                OnPropertyChanged(nameof(IsBlack));
-                OnPropertyChanged(nameof(IsKing));
-                OnPropertyChanged(nameof(IsEmpty));
-            }
+            get => Cell.Cellvalueenum;
+            set => Cell.Cellvalueenum = value;
         }
+
+        public bool IsWhite => Cell.IsWhite;
+        public bool IsBlack => Cell.IsBlack;
+        public bool IsKing => Cell.IsKing;
+        public bool IsEmpty => Cell.IsEmpty;
 
         public bool Act
         {
@@ -39,22 +35,21 @@ namespace CHECKERS.ViewModels
             set { _isHighlighted = value; OnPropertyChanged(); }
         }
 
-        public bool IsWhite => _cellvalueenum == CellValueEnum.WhiteChecker
-                            || _cellvalueenum == CellValueEnum.WhiteKing;
-        public bool IsBlack => _cellvalueenum == CellValueEnum.BlackChecker
-                            || _cellvalueenum == CellValueEnum.BlackKing;
-        public bool IsKing => _cellvalueenum == CellValueEnum.WhiteKing
-                            || _cellvalueenum == CellValueEnum.BlackKing;
-        public bool IsEmpty => _cellvalueenum == CellValueEnum.Empty;
-
-        public bool BelongsTo(CellValueEnum player) =>
-            (player == CellValueEnum.WhiteChecker && IsWhite) ||
-            (player == CellValueEnum.BlackChecker && IsBlack);
+        public bool BelongsTo(CellValueEnum player) => Cell.BelongsTo(player);
 
         public CellViewModel(Cell cell)
         {
             Cell = cell;
-            _cellvalueenum = CellValueEnum.Empty;
+            cell.ViewModel = this;
+        }
+
+        public void Refresh()
+        {
+            OnPropertyChanged(nameof(Cellvalueenum));
+            OnPropertyChanged(nameof(IsWhite));
+            OnPropertyChanged(nameof(IsBlack));
+            OnPropertyChanged(nameof(IsKing));
+            OnPropertyChanged(nameof(IsEmpty));
         }
     }
 }
