@@ -1,4 +1,5 @@
-﻿using CHECKERS.Models;
+﻿using CHECKERS.Helpers;
+using CHECKERS.Models;
 using CHECKERS.Services;
 using CHECKERS.ViewModels.Base;
 using System.Collections.ObjectModel;
@@ -241,16 +242,9 @@ namespace CHECKERS.ViewModels
         private void RebuildMoveLog()
         {
             MoveLog.Clear();
-            var all = _history.GetHistory();
-            for (int i = 0; i < all.Count; i++)
-            {
-                var m = all[i];
-                string side = i % 2 == 0 ? "Білі" : "Чорні";
-                string capture = m.Captured != null ? " ×" : "";
-                MoveLog.Add(
-                    $"{i + 1}. {side}: ({m.From.Row},{m.From.Column})" +
-                    $"→({m.To.Row},{m.To.Column}){capture}");
-            }
+            var formatted = MoveFormatter.Format(_history.GetHistory());
+            foreach (var entry in formatted)
+                MoveLog.Add(entry);
         }
 
         private void SwitchTurnAfterTimeout()
