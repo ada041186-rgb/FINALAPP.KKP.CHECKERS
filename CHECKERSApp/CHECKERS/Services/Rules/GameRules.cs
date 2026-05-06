@@ -25,8 +25,7 @@ namespace CHECKERS.Services
 
         public IReadOnlyList<Move> GetAllCaptures(Board board, CellValueEnum player)
         {
-            return board
-                .Where(c => c.BelongsTo(player))
+            return board.GetPiecesFor(player)
                 .SelectMany(c => _factory.Get(c.ViewModel).GetCaptureMoves(board, c.ViewModel))
                 .ToList();
         }
@@ -36,15 +35,11 @@ namespace CHECKERS.Services
 
         public bool IsGameOver(Board board, CellValueEnum currentPlayer)
         {
-            if (!board.HasOpponentPieces(currentPlayer))
-                return true;
+            if (!board.HasOpponentPieces(currentPlayer)) return true;
 
-            var opponent = currentPlayer == CellValueEnum.WhiteChecker
-                ? CellValueEnum.BlackChecker
-                : CellValueEnum.WhiteChecker;
+            var opponent = currentPlayer == CellValueEnum.WhiteChecker ? CellValueEnum.BlackChecker : CellValueEnum.WhiteChecker;
 
-            return !board
-                .Where(c => c.BelongsTo(opponent))
+            return !board.GetPiecesFor(opponent)
                 .Any(c => GetAvailableMoves(board, c.ViewModel).Count > 0);
         }
     }
