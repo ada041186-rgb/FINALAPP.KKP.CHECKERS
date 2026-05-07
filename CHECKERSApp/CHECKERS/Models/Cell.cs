@@ -4,23 +4,29 @@ namespace CHECKERS.Models
 {
     public class Cell
     {
+        private CellValueEnum _cellvalueenum = CellValueEnum.Empty;
+
         public int Row { get; }
         public int Column { get; }
         public CellViewModel ViewModel { get; set; } = null!;
 
         public CellValueEnum Cellvalueenum
         {
-            get => ViewModel.Cellvalueenum;
-            set => ViewModel.Cellvalueenum = value;
+            get => _cellvalueenum;
+            set
+            {
+                _cellvalueenum = value;
+                ViewModel?.Refresh();
+            }
         }
 
-        public bool IsWhite => Cellvalueenum == CellValueEnum.WhiteChecker
-                            || Cellvalueenum == CellValueEnum.WhiteKing;
-        public bool IsBlack => Cellvalueenum == CellValueEnum.BlackChecker
-                            || Cellvalueenum == CellValueEnum.BlackKing;
-        public bool IsKing => Cellvalueenum == CellValueEnum.WhiteKing
-                            || Cellvalueenum == CellValueEnum.BlackKing;
-        public bool IsEmpty => Cellvalueenum == CellValueEnum.Empty;
+        public bool IsWhite => _cellvalueenum == CellValueEnum.WhiteChecker
+                            || _cellvalueenum == CellValueEnum.WhiteKing;
+        public bool IsBlack => _cellvalueenum == CellValueEnum.BlackChecker
+                            || _cellvalueenum == CellValueEnum.BlackKing;
+        public bool IsKing => _cellvalueenum == CellValueEnum.WhiteKing
+                            || _cellvalueenum == CellValueEnum.BlackKing;
+        public bool IsEmpty => _cellvalueenum == CellValueEnum.Empty;
 
         public bool BelongsTo(CellValueEnum player) =>
             (player == CellValueEnum.WhiteChecker && IsWhite) ||
