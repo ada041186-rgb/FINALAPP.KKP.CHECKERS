@@ -195,7 +195,7 @@
                           VerticalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <UniformGrid Rows="8" Columns="8"/>
+                                <UniformGrid Rows="{Binding BoardSize}" Columns="{Binding BoardSize}"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>

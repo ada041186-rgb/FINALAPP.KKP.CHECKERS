@@ -36,6 +36,7 @@ namespace CHECKERS.ViewModels
             get => _cells;
             set { _cells = value; OnPropertyChanged(); }
         }
+        public int BoardSize => Board.Size;
 
         public int WhiteWins => _score.WhiteWins;
         public int BlackWins => _score.BlackWins;
@@ -279,6 +280,7 @@ namespace CHECKERS.ViewModels
             OnPropertyChanged(nameof(TotalMoves));
             OnPropertyChanged(nameof(WhiteCaptured));
             OnPropertyChanged(nameof(BlackCaptured));
+            OnPropertyChanged(nameof(BoardSize));
             SecondsLeft = _timer.SecondsLeft;
         }
     }

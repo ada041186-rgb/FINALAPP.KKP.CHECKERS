@@ -7,14 +7,14 @@ namespace CHECKERS.Services
         public void Setup(Board board)
         {
             for (int r = 0; r < 3; r++)
-                for (int c = 0; c < 8; c++)
+                for (int c = 0; c < Board.Size; c++)
                     if ((r + c) % 2 != 0)
-                        board[r, c].ViewModel.Cellvalueenum = CellValueEnum.BlackChecker;
+                        board[r, c].Cellvalueenum = CellValueEnum.BlackChecker;
 
-            for (int r = 5; r < 8; r++)
-                for (int c = 0; c < 8; c++)
+            for (int r = Board.Size - 3; r < Board.Size; r++)
+                for (int c = 0; c < Board.Size; c++)
                     if ((r + c) % 2 != 0)
-                        board[r, c].ViewModel.Cellvalueenum = CellValueEnum.WhiteChecker;
+                        board[r, c].Cellvalueenum = CellValueEnum.WhiteChecker;
         }
     }
 }

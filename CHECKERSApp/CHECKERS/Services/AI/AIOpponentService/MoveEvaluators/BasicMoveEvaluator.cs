@@ -1,20 +1,13 @@
 ﻿using CHECKERS.Models;
-using CHECKERS.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace CHECKERS.Services.AI
 {
     public class BasicMoveEvaluator : IMoveEvaluator
     {
-        private const int PromotionBonus = 10;
-        private const int EdgeBonus = 3;
-        private const int StartRowPenalty = -4;
-        private const int CenterBonus = 2;
+        private const int PromotionBonus = 15;
+        private const int EdgeBonus = 5;
+        private const int BaseRowPenalty = 4;
+        private const int CenterBonus = 3;
 
         public int Evaluate(Move move)
         {
@@ -28,8 +21,8 @@ namespace CHECKERS.Services.AI
             if (IsEdge(move))
                 score += EdgeBonus;
 
-            if (IsFromStartRow(move))
-                score -= StartRowPenalty;
+            if (IsFromBaseRow(move))
+                score -= BaseRowPenalty;
 
             if (IsCenter(move))
                 score += CenterBonus;
@@ -37,29 +30,36 @@ namespace CHECKERS.Services.AI
             return score;
         }
 
-        private bool IsCenter(Move move)
+        private bool IsPromotion(Move move)
         {
-            return move.To.Row == 7;
-        }
-
-        private bool IsFromStartRow(Move move)
-        {
-            return move.To.Column == 0 || move.To.Column == 7;
+            return move.From.IsWhite
+                ? move.To.Row == 0
+                : move.To.Row == Board.Size - 1;
         }
 
         private bool IsEdge(Move move)
         {
-            return move.From.Row == 0;
+            return move.To.Column == 0 || move.To.Column == Board.Size - 1;
         }
 
-        private bool IsPromotion(Move move)
+        private bool IsFromBaseRow(Move move)
         {
-            return move.To.Column == 3 || move.To.Column == 4;
+            int baseRow = move.From.IsWhite ? Board.Size - 1 : 0;
+            return move.From.Row == baseRow;
+        }
+
+        private bool IsCenter(Move move)
+        {
+            int mid = Board.Size / 2;
+            return (move.To.Row == mid || move.To.Row == mid - 1) &&
+                    (move.To.Column == mid || move.To.Column == mid - 1);
         }
 
         private int EvaluateForwardProgress(Move move)
         {
-            return move.To.Row;
+            return move.From.IsWhite
+                ? (Board.Size - 1 - move.To.Row)
+                : move.To.Row;
         }
     }
 }

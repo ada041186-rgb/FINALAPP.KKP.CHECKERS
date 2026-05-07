@@ -38,8 +38,7 @@ namespace CHECKERS.Services
 
         private List<Move> CollectAllMoves(Board board, CellValueEnum player)
         {
-            return board
-                .Where(c => c.BelongsTo(player))
+            return board.GetPiecesFor(player)
                 .SelectMany(c => _rules.GetAvailableMoves(board, c.ViewModel))
                 .ToList();
         }
