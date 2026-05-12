@@ -2,7 +2,11 @@
 using CHECKERS.Models;
 using CHECKERS.Services;
 using CHECKERS.ViewModels.Base;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -37,14 +41,13 @@ namespace CHECKERS.ViewModels
             get => _cells;
             set { _cells = value; OnPropertyChanged(); }
         }
-        public int BoardSize => Board.Size;
 
+        public int BoardSize => Board.Size;
         public int WhiteWins => _score.WhiteWins;
         public int BlackWins => _score.BlackWins;
         public int TotalMoves => _statistics.Current.TotalMoves;
         public int WhiteCaptured => _statistics.Current.WhiteCaptured;
         public int BlackCaptured => _statistics.Current.BlackCaptured;
-
         public ObservableCollection<string> MoveLog { get; } = new();
 
         private int _secondsLeft;
@@ -53,12 +56,14 @@ namespace CHECKERS.ViewModels
             get => _secondsLeft;
             private set { _secondsLeft = value; OnPropertyChanged(); }
         }
+
         private Move? _lastMove;
         public Move? LastMove
         {
             get => _lastMove;
             private set { _lastMove = value; OnPropertyChanged(); }
         }
+
         private string _hintText = "";
         public string HintText
         {
@@ -66,21 +71,19 @@ namespace CHECKERS.ViewModels
             private set { _hintText = value; OnPropertyChanged(); }
         }
 
-        public string CurrentPlayerText =>
-            _ctx.CurrentPlayer == CellValueEnum.WhiteChecker
-                ? "Хід:  Білі"
-                : "Хід:  Чорні";
+        public string CurrentPlayerText => _ctx.CurrentPlayer == CellValueEnum.WhiteChecker ? "Хід:  Білі" : "Хід:  Чорні";
+        public string AIButtonText => _aiMode.IsEnabled ? " AI: Увімк" : " AI: Вимк";
 
-        public ICommand ToggleAICommand { get; }
-        public ICommand PlayCommand { get; }
-        public ICommand OpenSettingsCommand { get; }
-        public ICommand ExitCommand { get; }
-        public ICommand NewGameCommand { get; }
-        public ICommand BackToMenuCommand { get; }
-        public ICommand CellCommand { get; }
-        public ICommand HintCommand { get; }
-        public ICommand SaveGameCommand { get; }
-        public ICommand LoadGameCommand { get; }
+        public ICommand ToggleAICommand { get; private set; }
+        public ICommand PlayCommand { get; private set; }
+        public ICommand OpenSettingsCommand { get; private set; }
+        public ICommand ExitCommand { get; private set; }
+        public ICommand NewGameCommand { get; private set; }
+        public ICommand BackToMenuCommand { get; private set; }
+        public ICommand CellCommand { get; private set; }
+        public ICommand HintCommand { get; private set; }
+        public ICommand SaveGameCommand { get; private set; }
+        public ICommand LoadGameCommand { get; private set; }
 
         public MainWindowViewModel(
             IAIOpponentService ai,
@@ -111,70 +114,32 @@ namespace CHECKERS.ViewModels
             _save = save;
             _snapshot = snapshot;
 
-            _timer.Tick += () =>
-                Application.Current.Dispatcher.Invoke(() =>
-                    SecondsLeft = _timer.SecondsLeft);
+            InitializeEvents();
+            InitializeCommands();
+        }
 
-            _timer.TimeExpired += () =>
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    _dialog.ShowMessage("Час вийшов! Хід пропущено.", "Таймер");
-                    SwitchTurnAfterTimeout();
-                });
+        private void InitializeEvents()
+        {
+            _timer.Tick += () => Application.Current.Dispatcher.Invoke(() => SecondsLeft = _timer.SecondsLeft);
+            _timer.TimeExpired += () => Application.Current.Dispatcher.Invoke(() =>
+            {
+                _dialog.ShowMessage("Час вийшов! Хід пропущено.", "Таймер");
+                SwitchTurnAfterTimeout();
+            });
+        }
 
+        private void InitializeCommands()
+        {
             PlayCommand = new Command(_ => StartGame());
             OpenSettingsCommand = new Command(_ => _settingsDialog.Show());
             ExitCommand = new Command(_ => Application.Current.Shutdown());
             NewGameCommand = new Command(_ => StartNewGame());
             BackToMenuCommand = new Command(_ => _navigator.GoToMenu());
-            ToggleAICommand = new Command(_ =>
-            {
-                _aiMode.Toggle();
-                OnPropertyChanged(nameof(AIButtonText));
-            });
-
-            HintCommand = new Command(_ =>
-            {
-                var h = _hint.GetBestMove(_ctx.Board, _ctx.CurrentPlayer);
-                HintText = h == null
-                    ? "Немає доступних ходів"
-                    : $"Підказка: ({h.Move.From.Row},{h.Move.From.Column})" +
-                      $" → ({h.Move.To.Row},{h.Move.To.Column})";
-            });
-
-            SaveGameCommand = new Command(_ =>
-            {
-                var snap = _snapshot.Build(_ctx, _statistics.Current.TotalMoves);
-                _save.Save(snap);
-                _dialog.ShowMessage("Гру збережено.", "Збереження");
-            });
-
-            LoadGameCommand = new Command(_ =>
-            {
-                if (!_save.HasSave())
-                {
-                    _dialog.ShowMessage("Збереженої гри не знайдено.", "Завантаження");
-                    return;
-                }
-                var snap = _save.Load();
-                if (snap == null) return;
-                RestoreSnapshot(snap);
-                _navigator.GoToGame();
-            });
-
-            CellCommand = new Command(param =>
-            {
-                if (param is not CellViewModel cell) return;
-                int before = _history.GetHistory().Count;
-                _ctx.HandleClick(cell);
-                if (_history.GetHistory().Count > before)
-                    RefreshAfterMove();
-                else
-                {
-                    HintText = "";
-                    RefreshAllProperties();
-                }
-            });
+            ToggleAICommand = new Command(_ => { _aiMode.Toggle(); OnPropertyChanged(nameof(AIButtonText)); });
+            HintCommand = new Command(_ => ShowMoveHint());
+            SaveGameCommand = new Command(_ => SaveGame());
+            LoadGameCommand = new Command(_ => LoadGame());
+            CellCommand = new Command(param => HandleCellInteraction(param as CellViewModel));
         }
 
         private void StartGame()
@@ -196,23 +161,54 @@ namespace CHECKERS.ViewModels
             _timer.Start();
         }
 
+        private void HandleCellInteraction(CellViewModel? cell)
+        {
+            if (cell == null) return;
+
+            int movesBefore = _history.GetHistory().Count;
+            _ctx.HandleClick(cell);
+
+            if (_history.GetHistory().Count > movesBefore)
+                RefreshAfterMove();
+            else
+            {
+                HintText = "";
+                RefreshAllProperties();
+            }
+        }
+
         private void RefreshAfterMove()
+        {
+            UpdateGameState();
+
+            if (!_ctx.GameOver)
+            {
+                PrepareNextTurn();
+            }
+            else
+            {
+                ProcessGameOver();
+            }
+        }
+
+        private void UpdateGameState()
         {
             RebuildMoveLog();
             HintText = "";
             RefreshAllProperties();
-
             var history = _history.GetHistory();
             LastMove = history.Count > 0 ? history[^1] : null;
+        }
 
-            if (!_ctx.GameOver)
-            {
-                _timer.Reset();
-                _timer.Start();
-                TryAIMove();
-                return;
-            }
+        private void PrepareNextTurn()
+        {
+            _timer.Reset();
+            _timer.Start();
+            TryAIMove();
+        }
 
+        private void ProcessGameOver()
+        {
             _timer.Stop();
             var winner = _ctx.GetWinner()!.Value;
             _score.RecordWin(winner);
@@ -222,11 +218,10 @@ namespace CHECKERS.ViewModels
             OnPropertyChanged(nameof(BlackWins));
             StartNewGame();
         }
+
         private async void TryAIMove()
         {
-            if (!_aiMode.IsEnabled) return;
-            if (_ctx.GameOver) return;
-            if (!_ai.IsAITurn(_ctx.CurrentPlayer)) return;
+            if (!_aiMode.IsEnabled || _ctx.GameOver || !_ai.IsAITurn(_ctx.CurrentPlayer)) return;
 
             await Task.Delay(600);
 
@@ -239,13 +234,38 @@ namespace CHECKERS.ViewModels
             _ctx.HandleClick(move.To);
             RefreshAfterMove();
         }
-        public string AIButtonText => _aiMode.IsEnabled ? " AI: Увімк" : " AI: Вимк";
+
+        private void ShowMoveHint()
+        {
+            var h = _hint.GetBestMove(_ctx.Board, _ctx.CurrentPlayer);
+            HintText = h == null ? "Немає доступних ходів" : $"Підказка: ({h.Move.From.Row},{h.Move.From.Column}) → ({h.Move.To.Row},{h.Move.To.Column})";
+        }
+
+        private void SaveGame()
+        {
+            var snap = _snapshot.Build(_ctx, _statistics.Current.TotalMoves);
+            _save.Save(snap);
+            _dialog.ShowMessage("Гру збережено.", "Збереження");
+        }
+
+        private void LoadGame()
+        {
+            if (!_save.HasSave())
+            {
+                _dialog.ShowMessage("Збереженої гри не знайдено.", "Завантаження");
+                return;
+            }
+            var snap = _save.Load();
+            if (snap == null) return;
+            RestoreSnapshot(snap);
+            _navigator.GoToGame();
+        }
+
         private void RebuildMoveLog()
         {
             MoveLog.Clear();
             var formatted = MoveFormatter.Format(_history.GetHistory());
-            foreach (var entry in formatted)
-                MoveLog.Add(entry);
+            foreach (var entry in formatted) MoveLog.Add(entry);
         }
 
         private void SwitchTurnAfterTimeout()
