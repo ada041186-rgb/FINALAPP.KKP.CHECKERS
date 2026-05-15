@@ -77,6 +77,10 @@ namespace CHECKERS
 
             s.AddSingleton<IMoveEvaluator, BasicMoveEvaluator>();
 
+            s.AddSingleton<IAIStrategy, EasyAIStrategy>();
+            s.AddSingleton<IAIStrategy, MediumAIStrategy>();
+            s.AddSingleton<IAIStrategy, HardAIStrategy>();
+
             s.AddSingleton<IScreenNavigator>(sp =>
             {
                 var lazy = new Lazy<MainWindowViewModel>(
