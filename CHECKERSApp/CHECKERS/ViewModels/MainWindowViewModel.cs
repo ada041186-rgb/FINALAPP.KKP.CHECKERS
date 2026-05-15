@@ -3,9 +3,7 @@ using CHECKERS.Models;
 using CHECKERS.Services;
 using CHECKERS.ViewModels.Base;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -14,6 +12,8 @@ namespace CHECKERS.ViewModels
 {
     public class MainWindowViewModel : ViewModel
     {
+        private const int AiMoveDelayMilliseconds = 600;
+
         private readonly IAIOpponentService _ai;
         private readonly IAIModeService _aiMode;
         private readonly IGameContext _ctx;
@@ -64,7 +64,7 @@ namespace CHECKERS.ViewModels
             private set { _lastMove = value; OnPropertyChanged(); }
         }
 
-        private string _hintText = "";
+        private string _hintText = string.Empty;
         public string HintText
         {
             get => _hintText;
@@ -121,6 +121,7 @@ namespace CHECKERS.ViewModels
         private void InitializeEvents()
         {
             _timer.Tick += () => Application.Current.Dispatcher.Invoke(() => SecondsLeft = _timer.SecondsLeft);
+
             _timer.TimeExpired += () => Application.Current.Dispatcher.Invoke(() =>
             {
                 _dialog.ShowMessage("Час вийшов! Хід пропущено.", "Таймер");
@@ -135,7 +136,11 @@ namespace CHECKERS.ViewModels
             ExitCommand = new Command(_ => Application.Current.Shutdown());
             NewGameCommand = new Command(_ => StartNewGame());
             BackToMenuCommand = new Command(_ => _navigator.GoToMenu());
-            ToggleAICommand = new Command(_ => { _aiMode.Toggle(); OnPropertyChanged(nameof(AIButtonText)); });
+            ToggleAICommand = new Command(_ =>
+            {
+                _aiMode.Toggle();
+                OnPropertyChanged(nameof(AIButtonText));
+            });
             HintCommand = new Command(_ => ShowMoveHint());
             SaveGameCommand = new Command(_ => SaveGame());
             LoadGameCommand = new Command(_ => LoadGame());
@@ -154,26 +159,30 @@ namespace CHECKERS.ViewModels
             _ctx.NewGame();
             _statistics.Reset();
             _history.Clear();
-            MoveLog.Clear();
-            HintText = "";
-            Cells = new ObservableCollection<CellViewModel>(_ctx.GetCellViewModels());
-            RefreshAllProperties();
+
+            ResetTransientUiState();
+            SyncCellsFromContext();
+            RefreshBindableState();
+
             _timer.Start();
         }
 
         private void HandleCellInteraction(CellViewModel? cell)
         {
-            if (cell == null) return;
+            if (cell == null)
+                return;
 
             int movesBefore = _history.GetHistory().Count;
             _ctx.HandleClick(cell);
 
             if (_history.GetHistory().Count > movesBefore)
+            {
                 RefreshAfterMove();
+            }
             else
             {
-                HintText = "";
-                RefreshAllProperties();
+                HintText = string.Empty;
+                RefreshBindableState();
             }
         }
 
@@ -194,10 +203,9 @@ namespace CHECKERS.ViewModels
         private void UpdateGameState()
         {
             RebuildMoveLog();
-            HintText = "";
-            RefreshAllProperties();
-            var history = _history.GetHistory();
-            LastMove = history.Count > 0 ? history[^1] : null;
+            LastMove = GetLastMove();
+            HintText = string.Empty;
+            RefreshBindableState();
         }
 
         private void PrepareNextTurn()
@@ -210,41 +218,53 @@ namespace CHECKERS.ViewModels
         private void ProcessGameOver()
         {
             _timer.Stop();
+
             var winner = _ctx.GetWinner()!.Value;
             _score.RecordWin(winner);
-            string name = winner == CellValueEnum.WhiteChecker ? "Білі" : "Чорні";
-            _dialog.ShowMessage($"Переможець — {name}!", "Кінець гри");
-            OnPropertyChanged(nameof(WhiteWins));
-            OnPropertyChanged(nameof(BlackWins));
+
+            string winnerName = GetPlayerName(winner);
+            _dialog.ShowMessage($"Переможець — {winnerName}!", "Кінець гри");
+
+            RefreshBindableState();
             StartNewGame();
         }
 
         private async void TryAIMove()
         {
-            if (!_aiMode.IsEnabled || _ctx.GameOver || !_ai.IsAITurn(_ctx.CurrentPlayer)) return;
+            if (!CanAIMove())
+                return;
 
-            await Task.Delay(600);
+            await Task.Delay(AiMoveDelayMilliseconds);
 
-            if (!_aiMode.IsEnabled || _ctx.GameOver) return;
+            if (!CanAIMove())
+                return;
 
             var move = _ai.ChooseMove(_ctx.Board, _ctx.CurrentPlayer);
-            if (move == null) return;
+            if (move == null)
+                return;
 
             _ctx.HandleClick(move.From);
             _ctx.HandleClick(move.To);
             RefreshAfterMove();
         }
 
+        private bool CanAIMove()
+        {
+            return _aiMode.IsEnabled && !_ctx.GameOver && _ai.IsAITurn(_ctx.CurrentPlayer);
+        }
+
         private void ShowMoveHint()
         {
-            var h = _hint.GetBestMove(_ctx.Board, _ctx.CurrentPlayer);
-            HintText = h == null ? "Немає доступних ходів" : $"Підказка: ({h.Move.From.Row},{h.Move.From.Column}) → ({h.Move.To.Row},{h.Move.To.Column})";
+            var bestMove = _hint.GetBestMove(_ctx.Board, _ctx.CurrentPlayer);
+            HintText = bestMove == null
+                ? "Немає доступних ходів"
+                : $"Підказка: ({bestMove.Move.From.Row},{bestMove.Move.From.Column}) → ({bestMove.Move.To.Row},{bestMove.Move.To.Column})";
         }
 
         private void SaveGame()
         {
-            var snap = _snapshot.Build(_ctx, _statistics.Current.TotalMoves);
-            _save.Save(snap);
+            var snapshot = _snapshot.Build(_ctx, _statistics.Current.TotalMoves);
+            _save.Save(snapshot);
             _dialog.ShowMessage("Гру збережено.", "Збереження");
         }
 
@@ -255,24 +275,29 @@ namespace CHECKERS.ViewModels
                 _dialog.ShowMessage("Збереженої гри не знайдено.", "Завантаження");
                 return;
             }
-            var snap = _save.Load();
-            if (snap == null) return;
-            RestoreSnapshot(snap);
+
+            var snapshot = _save.Load();
+            if (snapshot == null)
+                return;
+
+            RestoreSnapshot(snapshot);
             _navigator.GoToGame();
         }
 
         private void RebuildMoveLog()
         {
             MoveLog.Clear();
-            var formatted = MoveFormatter.Format(_history.GetHistory());
-            foreach (var entry in formatted) MoveLog.Add(entry);
+
+            var formattedMoves = MoveFormatter.Format(_history.GetHistory());
+            foreach (var entry in formattedMoves)
+                MoveLog.Add(entry);
         }
 
         private void SwitchTurnAfterTimeout()
         {
             _ctx.ClearHighlights();
             _ctx.SwitchTurn();
-            RefreshAllProperties();
+            RefreshBindableState();
             _timer.Reset();
             _timer.Start();
         }
@@ -282,19 +307,47 @@ namespace CHECKERS.ViewModels
             _snapshot.Restore(_ctx, snap);
             _statistics.Reset();
             _history.Clear();
-            MoveLog.Clear();
-            Cells = new ObservableCollection<CellViewModel>(_ctx.GetCellViewModels());
-            RefreshAllProperties();
+
+            ResetTransientUiState();
+            SyncCellsFromContext();
+            RefreshBindableState();
+
             _timer.Start();
         }
 
-        private void RefreshAllProperties()
+        private void ResetTransientUiState()
+        {
+            MoveLog.Clear();
+            HintText = string.Empty;
+            LastMove = null;
+        }
+
+        private void SyncCellsFromContext()
+        {
+            Cells = new ObservableCollection<CellViewModel>(_ctx.GetCellViewModels());
+        }
+
+        private Move? GetLastMove()
+        {
+            var history = _history.GetHistory();
+            return history.Count > 0 ? history[^1] : null;
+        }
+
+        private static string GetPlayerName(CellValueEnum winner)
+        {
+            return winner == CellValueEnum.WhiteChecker ? "Білі" : "Чорні";
+        }
+
+        private void RefreshBindableState()
         {
             OnPropertyChanged(nameof(CurrentPlayerText));
             OnPropertyChanged(nameof(TotalMoves));
             OnPropertyChanged(nameof(WhiteCaptured));
             OnPropertyChanged(nameof(BlackCaptured));
             OnPropertyChanged(nameof(BoardSize));
+            OnPropertyChanged(nameof(WhiteWins));
+            OnPropertyChanged(nameof(BlackWins));
+
             SecondsLeft = _timer.SecondsLeft;
         }
     }
