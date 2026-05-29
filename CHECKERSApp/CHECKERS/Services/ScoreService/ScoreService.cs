@@ -1,4 +1,5 @@
-﻿using CHECKERS.Models;
+﻿using CHECKERS.Helpers;
+using CHECKERS.Models;
 
 namespace CHECKERS.Services
 {
@@ -9,8 +10,8 @@ namespace CHECKERS.Services
 
         public void RecordWin(CellValueEnum winner)
         {
-            if (winner == CellValueEnum.WhiteChecker) WhiteWins++;
-            else BlackWins++;
+            if (winner.IsWhite()) WhiteWins++;
+            else if (winner.IsBlack()) BlackWins++;
         }
 
         public void Reset()

@@ -335,7 +335,7 @@ namespace CHECKERS.ViewModels
 
         private static string GetPlayerName(CellValueEnum winner)
         {
-            return winner == CellValueEnum.WhiteChecker ? "Білі" : "Чорні";
+            return winner.IsWhite() ? "Білі" : "Чорні";
         }
 
         private void RefreshBindableState()
